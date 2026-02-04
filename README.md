@@ -71,10 +71,8 @@ Most demo projects show pretty screens.
 - Google Maps JavaScript/Directions API
 - Firebase Auth + Firestore
 - Backend REST + WebSocket APIs
-![a7f9e1ab-aef4-49b0-9378-f4752a1949af](https://github.com/user-attachments/assets/fb1dd4fc-0eab-415a-b57a-a4ade62039d8)
-![b049936b-ccbf-4b79-b0ef-4bc1d9949489](https://github.com/user-attachments/assets/cbdcdcdc-1979-426a-8672-a58b56dd17b6)
-![9416296b-28dc-4774-979b-d8e9b1f1eea9](https://github.com/user-attachments/assets/9227bb7a-f686-4ec1-a5ba-4ffac78a4e7c)
-![bbd352c9-1c0c-4b44-9422-94d411eb68ae](https://github.com/user-attachments/assets/c45051a1-bf5b-4157-9de5-262cba7e1c1b)
+<img width="283" height="610" alt="image" src="https://github.com/user-attachments/assets/dae0e8b6-f766-4bc0-a2e3-3cf36bb7d195" />
+
 
 
 ## 🚗 2. Driver Application
