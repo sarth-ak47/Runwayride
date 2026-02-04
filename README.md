@@ -1,158 +1,124 @@
-🚕 RUNWAYRIDE
-A Full-Stack Ride Hailing Platform (Customer App + Driver App + Pricing Engine)
+# 🚕 RUNWAYRIDE  
+### A Full-Stack Ride Hailing Platform  
+*(Customer App + Driver App + Pricing Engine)*
 
-RUNWAYRIDE is a production-oriented ride-hailing platform inspired by Ola, Uber, and Rapido.
-It demonstrates end-to-end system design, including customer booking, driver operations, live tracking, payments, and a terrain-aware pricing engine.
+RUNWAYRIDE is a **production-oriented ride-hailing platform** inspired by Ola, Uber, and Rapido.  
+It demonstrates **end-to-end system design**, including customer booking, driver operations, live tracking, payments, and a terrain-aware pricing engine.
 
-This repository focuses on architecture, APIs, and business logic, which are the hardest and most critical parts of ride-hailing systems.
+This repository focuses on **architecture, APIs, and business logic**, which are the hardest and most critical parts of ride-hailing systems.
 
-🧠 What Makes RUNWAYRIDE Different
+---
 
-Most demo projects show screens.
-RUNWAYRIDE shows how real ride-hailing systems actually work:
+## 💡 What Makes RUNWAYRIDE Different
 
-Two independent mobile apps (Customer & Driver)
+Most demo projects focus on UI screens.  
+**RUNWAYRIDE focuses on how real ride-hailing systems actually work.**
 
-Real-time location tracking
+- Two independent mobile applications (Customer & Driver)
+- Real-time location tracking
+- Server-driven pricing and ride matching
+- Terrain-aware fare calculation
+- Payment and referral workflows
+- Scalable backend-first design
 
-Server-driven pricing & matching
+---
 
-Terrain-aware fare calculation
+## 🏗️ High-Level System Architecture
 
-Payment & referral workflows
+```text
+┌──────────────────┐
+│  Customer App    │
+│ (Flutter / iOS)  │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────────────┐
+│       Backend APIs       │
+│ Auth | Rides | Pricing  │
+│ Maps | Matching | ETA   │
+└────────┬─────────────────┘
+         │
+ ┌───────┼─────────────┬─────────────┐
+ ▼       ▼             ▼             ▼
+Pricing Engine   Real-Time Tracking   Payment Service
+(This Repo)      (Sockets / DB)       (Razorpay)
+         ▲
+         │
+┌────────┴─────────┐
+│   Driver App     │
+│   (Flutter)      │
+└──────────────────┘
+📱 Customer Application (Rider App)
 
-Scalable backend design
+The Customer App handles ride discovery, booking, and tracking.
 
-🏗️ High-Level System Architecture
-                ┌──────────────────┐
-                │   Customer App   │
-                │ (Flutter / iOS)  │
-                └────────┬─────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │   Backend APIs   │
-                │ (Auth, Rides,    │
-                │  Pricing, Maps)  │
-                └────────┬─────────┘
-                         │
-        ┌────────────────┼────────────────┐
-        ▼                ▼                ▼
- Pricing Engine   Real-Time Tracking   Payment Service
- (This Repo)      (Sockets / DB)       (Razorpay)
-        ▲
-        │
-┌───────────────┐
-│  Driver App   │
-│ (Flutter)     │
-└───────────────┘
+Core Responsibilities
 
-📱 1️⃣ Customer Application (Rider App)
+Google Maps & Directions API integration
 
-The Customer App is responsible for ride discovery, booking, and payment.
+Pickup & drop location selection
 
-🔹 Core Features
+Route distance and ETA calculation
 
-📍 Google Maps SDK integration
+Real-time fare estimation (server driven)
 
-🧭 Pickup & drop selection with autocomplete
+Driver assignment & ride lifecycle
 
-🛣️ Route & ETA calculation
+Live ride tracking
 
-💰 Real-time fare estimation (server driven)
+Payment initiation
 
-🚕 Driver matching & ride lifecycle
+Push notifications
 
-📡 Live ride tracking
+🚗 Driver Application
 
-💳 Online payments
+The Driver App is a separate system with its own workflows.
 
-🔔 Notifications (ride status)
+Core Responsibilities
 
-🔹 APIs & Services Used
+Driver authentication & onboarding
 
-Google Maps & Directions API
+Online / offline availability
 
-Backend REST APIs
+Live GPS streaming
 
-Firebase Authentication
+Ride accept / reject logic
 
-Firestore / Cloud Database
+Navigation support
 
-Push Notifications
+Earnings tracking
 
-🚗 2️⃣ Driver Application
+Referral & incentive integration
 
-The Driver App is a completely separate system with different responsibilities.
-
-🔹 Core Features
-
-🔐 Driver authentication & onboarding
-
-🟢 Online / Offline availability
-
-📍 Live GPS location streaming
-
-🚦 Ride accept / reject workflow
-
-🧭 Turn-by-turn navigation
-
-💸 Earnings & payout tracking
-
-👥 Referral & incentive system
-
-🔹 Real-Time Location Tracking
-
-Driver location updates pushed at intervals
-
-Backend broadcasts updates to customer app
-
-Optimized to reduce battery & data usage
-
-💳 3️⃣ Payments & Earnings
+💳 Payments & Earnings
 Razorpay Integration
 
-Secure online payments
+Secure payment processing
 
-Ride-based transaction handling
+Ride-based transaction verification
 
-Payment verification via backend
+Cancellation & refund handling
 
-Refund & cancellation handling
+Driver Earnings Model
 
-Driver Earnings Logic
-
-Gross fare
+Gross fare calculation
 
 Platform commission
 
-Incentives / referrals
+Incentives & referrals
 
-Net payout calculation
+Net payout computation
 
-🏔️ 4️⃣ Pricing Engine (Core Highlight)
+🏔️ Pricing Engine (Core Highlight)
 
-The pricing engine is the heart of RUNWAYRIDE and is the only publicly exposed code in this repository.
+Pricing is the most business-critical part of any ride-hailing platform.
 
-Why pricing is isolated
-
-In real systems, pricing is:
-
-Shared across apps
-
-Security-sensitive
-
-Business-critical
-
-Independently scalable
+This repository publicly exposes the pricing engine & fare schema, while keeping full app code private for security and IP reasons.
 
 🔍 Pricing Intelligence Layers
-
-RUNWAYRIDE uses multi-layer pricing intelligence, inspired by real Ola/Uber systems.
-
 1️⃣ Latitude–Longitude Zoning
 
-Classifies region as:
+Regions are classified as:
 
 Plain
 
@@ -166,17 +132,13 @@ This decides base pricing rules.
 
 2️⃣ Route Awareness (Pickup → Drop)
 
-Pricing is based on the worst terrain involved
-
-Prevents underpricing long hill routes
+The pricing engine considers the worst terrain involved in the route.
 
 3️⃣ Time & Speed Bias
 
-Hilly routes rely more on time-based pricing
+Hilly routes emphasize time-based pricing more than distance.
 
-Low average speed increases effective fare
-
-💰 Fare Calculation Model
+💰 Fare Calculation Formula
 Fare =
   Base Fare
 + (Distance × Per-Km Rate)
@@ -185,32 +147,15 @@ Fare =
 × Surge Multiplier
 
 
-No visible “hill charge” — pricing adjustments are internal.
+Passengers see one final fare, without separate terrain charges.
 
-📐 Terrain Multipliers (Example)
-Terrain	Multiplier
-Plain	1.00×
-Hill	1.10×
-Mountain	1.18×
-High Mountain	1.30×
+📄 Fare Schema File
 
-These simulate:
-
-Fuel consumption
-
-Driver fatigue
-
-Time delay
-
-Vehicle wear
-
-📄 Fare Schema File (Public)
-
-This repository includes the fare schema file, which defines:
+This repository includes a fare schema file defining:
 
 Vehicle-wise base fares
 
-Distance & time rates
+Per-km & per-minute rates
 
 Terrain multipliers
 
@@ -218,81 +163,49 @@ Minimum fare rules
 
 Surge compatibility
 
-The schema is:
-
-Config-driven
-
-Extendable
-
-Production-ready
+The schema is config-driven and production-ready.
 
 🧪 Sample Scenario
 
-SUV Ride – Mountain Route
+Sedan Ride – Mountain Route
 
-Distance: 140 km
+Distance: 120 km
 
-Duration: 360 minutes
+Duration: 300 minutes
 
-Terrain: Mountain
-
-Base Fare: ₹80
-Distance Fare: ₹22 × 140
-Time Fare: ₹1.1 × 360
+Base Fare: ₹65
+Distance Fare: ₹16 × 120
+Time Fare: ₹0.9 × 300
 Terrain Multiplier: 1.18×
 
-Final Fare ≈ ₹2,600+
+Final Fare ≈ ₹2,100+
 
-🧩 Edge Cases Covered
+🔐 Security & Design Considerations
 
-Minimum fare enforcement
+No API keys or secrets exposed
 
-Long outstation rides
-
-Mixed terrain routes
-
-Low-speed hill driving
-
-Surge & peak demand
-
-Ride cancellation scenarios
-
-🔐 Security & Safety Considerations
-
-No API keys exposed
-
-No production credentials
-
-Server-side pricing authority
+Pricing authority remains server-side
 
 Client apps act as thin layers
 
-🚀 Scalability Considerations
+Business logic is isolated and reusable
 
-Pricing engine can be moved to microservice
-
-City / region pricing via config
-
-Compatible with ML-based ETA systems
-
-Can integrate elevation APIs
-
-🔮 Planned Enhancements
+🚀 Scalability & Future Enhancements
 
 Elevation-based terrain scoring
 
-ML ETA prediction
+ML-driven ETA prediction
 
 Admin pricing dashboard
 
-Dynamic driver incentives
+Dynamic surge zones
 
-Heat-map based surge pricing
+Driver incentive optimization
 
 ⚠️ Disclaimer
 
-RUNWAYRIDE is a personal engineering project built for learning and demonstration.
-It is not affiliated with Ola, Uber, Rapido, or any commercial ride-hailing platform.
+RUNWAYRIDE is a personal engineering project built for learning and demonstration purposes.
+It is not affiliated with Ola, Uber, or Rapido.
 
 👨‍💻 Author
 
@@ -301,15 +214,3 @@ Your Name
 
 🔗 LinkedIn: linkedin.com/in/yourprofile
 💻 GitHub: github.com/yourusername
-
-⭐ Note for Recruiters
-
-This repository focuses on system design, pricing intelligence, and real-world constraints, not just UI implementation.
-
-It demonstrates:
-
-End-to-end product thinking
-
-Backend-driven mobile architecture
-
-Business-aware engineering decisions
