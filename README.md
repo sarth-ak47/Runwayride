@@ -72,8 +72,9 @@ Most demo projects show pretty screens.
 - Firebase Auth + Firestore
 - Backend REST + WebSocket APIs
 <img width="283" height="610" alt="image" src="https://github.com/user-attachments/assets/dae0e8b6-f766-4bc0-a2e3-3cf36bb7d195" />
-
-
+<img width="281" height="617" alt="image" src="https://github.com/user-attachments/assets/db540a7f-fe26-4cd5-9a85-daec0d393d01" />
+<img width="281" height="621" alt="image" src="https://github.com/user-attachments/assets/a8892e9c-ebd9-48c4-97fa-30d88a7fe913" />
+<img width="281" height="622" alt="image" src="https://github.com/user-attachments/assets/57f9381c-1901-4457-a8b5-6bbcfbb1a11c" />
 
 ## 🚗 2. Driver Application
 
@@ -92,6 +93,12 @@ Most demo projects show pretty screens.
 - Battery & data efficient updates
 - Backend broadcasts driver position to rider in real-time
 - Fallback to periodic polling when WebSocket disconnects
+  <img width="280" height="622" alt="image" src="https://github.com/user-attachments/assets/2284c1b0-d080-45e6-8148-a5755fb28556" />
+  <img width="276" height="616" alt="image" src="https://github.com/user-attachments/assets/1e073440-4e5c-404b-b032-d3c44e682f19" />
+  <img width="278" height="617" alt="image" src="https://github.com/user-attachments/assets/949a412b-a5fd-464d-b59a-c6bbff68b4ac" />
+  <img width="281" height="618" alt="image" src="https://github.com/user-attachments/assets/1f135d01-3b38-4708-a37d-195bff3b9e42" />
+  <img width="278" height="617" alt="image" src="https://github.com/user-attachments/assets/fcf22ae1-746b-4211-bdd2-0f9da80b7fee" />
+
 
 ## 💳 3. Payments & Earnings
 
@@ -188,8 +195,8 @@ It is **not** affiliated with Ola, Uber, Rapido, or any commercial ride-hailing 
 
 **Sarthak Pandey**  
 📧 [sarthakvarsh9696@gmail.com](mailto:sarthakvarsh9696@gmail.com)  
-🔗 [LinkedIn](https://linkedin.com/in/sarthakvarsh9696/)  
-💻 [GitHub](https://github.com/yourusername)
+🔗 [LinkedIn](https://www.linkedin.com/in/sarthakpandey96/)  
+💻 [GitHub](https://github.com/sarth-ak47/Runwayride)
 
 ---
 
