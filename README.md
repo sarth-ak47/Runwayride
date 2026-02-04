@@ -111,9 +111,8 @@ Most demo projects show pretty screens.
    Hilly/low-speed routes → higher weight on time component
 
 ### Fare Formula
-Fare = [
+-Fare = [
 Base Fare
-
 (Distance_km × Per-Km Rate)
 (Duration_min × Per-Min Rate)
 ] × Terrain Multiplier × Surge Multiplier
@@ -134,13 +133,12 @@ Base Fare
 - Distance: 140 km
 - Duration: 360 min (6 hours)
 - Terrain: Mountain
-  
-Base           ₹80
-Distance       ₹22 × 140 = ₹3,080
-Time           ₹1.1 × 360 = ₹396
-Subtotal       ₹3,556
-Terrain 1.18×  ≈ ₹4,196
-Final Fare     ~₹4,200 (after min fare & rounding rules)
+-Base           ₹80
+-Distance       ₹22 × 140 = ₹3,080
+-Time           ₹1.1 × 360 = ₹396
+-Subtotal       ₹3,556
+-Terrain 1.18×  ≈ ₹4,196
+-Final Fare     ~₹4,200 (after min fare & rounding rules)
 
 ## 🧪 Edge Cases Handled
 
