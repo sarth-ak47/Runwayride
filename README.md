@@ -20,7 +20,6 @@ Most demo projects show pretty screens.
 - Scalable, production-minded backend design
 
 ## 🏗️ High-Level Architecture
-## 🏗️ High-Level Architecture
 
 ```text
 ┌──────────────────────────┐        HTTP / WebSocket
@@ -72,6 +71,11 @@ Most demo projects show pretty screens.
 - Google Maps JavaScript/Directions API
 - Firebase Auth + Firestore
 - Backend REST + WebSocket APIs
+![a7f9e1ab-aef4-49b0-9378-f4752a1949af](https://github.com/user-attachments/assets/fb1dd4fc-0eab-415a-b57a-a4ade62039d8)
+![b049936b-ccbf-4b79-b0ef-4bc1d9949489](https://github.com/user-attachments/assets/cbdcdcdc-1979-426a-8672-a58b56dd17b6)
+![9416296b-28dc-4774-979b-d8e9b1f1eea9](https://github.com/user-attachments/assets/9227bb7a-f686-4ec1-a5ba-4ffac78a4e7c)
+![bbd352c9-1c0c-4b44-9422-94d411eb68ae](https://github.com/user-attachments/assets/c45051a1-bf5b-4157-9de5-262cba7e1c1b)
+
 
 ## 🚗 2. Driver Application
 
@@ -184,9 +188,9 @@ It is **not** affiliated with Ola, Uber, Rapido, or any commercial ride-hailing 
 
 ## 👨‍💻 Author
 
-**Your Name**  
-📧 [your@email.com](mailto:your@email.com)  
-🔗 [LinkedIn](https://linkedin.com/in/yourprofile)  
+**Sarthak Pandey**  
+📧 [sarthakvarsh9696@gmail.com](mailto:sarthakvarsh9696@gmail.com)  
+🔗 [LinkedIn](https://linkedin.com/in/sarthakvarsh9696/)  
 💻 [GitHub](https://github.com/yourusername)
 
 ---
